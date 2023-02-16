@@ -20,6 +20,7 @@ export const BrandBox = styled.section`
         color: ${({theme}) => theme.colors.brand.primary};
         margin: 2rem 0;
     }
+    height: 100vh;
 `
 
 export const ListProductsButton = styled.a`

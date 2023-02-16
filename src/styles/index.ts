@@ -17,6 +17,7 @@ html {
 }
 button{
   cursor: pointer;
+  background-color: transparent;
 }
 body{
     background-color: #000;
