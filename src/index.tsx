@@ -1,7 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'styles';
+import theme from 'styles/theme';
 import { store } from './store/Cart';
 
 const container = document.getElementById('root')!;
@@ -10,7 +12,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalStyles/>
+      <GlobalStyles/> 
+      <ThemeProvider theme={theme}>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
