@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from ".";
-import { IProduct } from "interfaces";
+import { IGame } from "interfaces";
 
 export interface ICartState {
-    cart: IProduct[]
+    cart: IGame[]
 }
 
 const initialState = {

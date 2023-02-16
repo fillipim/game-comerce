@@ -5,10 +5,10 @@ type IText = {
     color?: keyof typeof theme.colors.grey
     size?: keyof typeof theme.typography.sizes
     fontWeight?: 300 | 400 | 600 | 700
-    tag?: 1 | 2 | 3 | 4 | 5 | 6
+    tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "small"
 }
 export const Text = styled('h1').attrs<IText>(({ tag }) => ({
-    as: `h${tag}`
+    as: tag
   }))<IText>`
     ${({
       color = 'grey0',

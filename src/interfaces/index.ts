@@ -1,4 +1,7 @@
-export interface IProduct {
+export interface IGame {
+    id: number,
     name: string,
-    price: number
+    price: number,
+    score: number,
+    image: string
 }
