@@ -11,10 +11,18 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     outline: none;
     font-family: 'Nunito Sans', sans-serif;
-    text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
 }
 button{
   cursor: pointer;
 }
-
+body{
+    background-color: #000;
+}
+a{
+    text-decoration: none;
+    list-style: none;
+}
 `;
