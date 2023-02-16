@@ -5,3 +5,7 @@ export interface IGame {
     score: number,
     image: string
 }
+
+export interface IGameCart extends IGame {
+    amount: number
+}

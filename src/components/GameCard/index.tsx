@@ -1,5 +1,4 @@
 import { IGame } from "interfaces";
-import { title } from "process";
 import { Text } from "styles/typography";
 import * as S from "./gameCard.style";
 
