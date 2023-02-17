@@ -22,9 +22,6 @@ export const Cart = styled.div`
       bottom: 0;
     }
   }
-  div {
-    width: 300px;
-  }
 `;
 
 export const CartTitle = styled(Text)`
@@ -60,4 +57,4 @@ export const CloseCartButton = styled.button`
   font-size: 20px;
   margin: 1rem 0;
   color: ${({ theme }) => theme.colors.brand.secondary};
-`;
+`

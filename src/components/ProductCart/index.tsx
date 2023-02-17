@@ -13,29 +13,31 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
 
   return (
     <S.StyleProductCart>
-      <div>
-        <img src={require(`assets/${game.image}`).default} alt="" />
-      </div>
+      <img src={require(`assets/${game.image}`)} alt="" />
       <ul>
         <S.GameTitle>
           <Text tag="h4" size="size5">
             {game.name}
           </Text>
         </S.GameTitle>
-        <div>
+        <li>
           <S.GamePrice tag="span" size="size5" color="grey4">
             R$ {game.price}
           </S.GamePrice>
-          <button onClick={addCartProduct}>
-            <FaPlus />
-          </button>
-          <S.GameQtd tag="span" color="grey4">
-            {game.amount}
-          </S.GameQtd>
-          <button onClick={removeCartProduct}>
-            <FaMinus />
-          </button>
-        </div>
+        </li>
+        <li>
+          <div>
+            <button onClick={addCartProduct}>
+              <FaPlus />
+            </button>
+            <S.GameQtd tag="span" color="grey4">
+              {game.amount}
+            </S.GameQtd>
+            <button onClick={removeCartProduct}>
+              <FaMinus />
+            </button>
+          </div>
+        </li>
       </ul>
     </S.StyleProductCart>
   );
