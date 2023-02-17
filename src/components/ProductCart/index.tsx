@@ -1,24 +1,35 @@
-import { StyleProductCart } from "./productCart.style";
+import * as S from "./productCart.style";
 import { Text } from "styles/typography";
 import { IGameCart } from "interfaces";
+import { FaTrash } from "react-icons/fa";
 
-const ProductCart = ({game}: {game: IGameCart}) => {
+const ProductCart = ({ game }: { game: IGameCart }) => {
   return (
-    <StyleProductCart>
+    <S.StyleProductCart>
       <div>
         <img src={require(`assets/${game.image}`)} alt="" />
       </div>
-      <div>
-        <Text tag="h3" size="size5">
-          {game.name}
-        </Text>
-        <button>Remover</button>
-        <Text tag="span" size="size5">
-          {game.price}
-        </Text>
-        <span>Qtd: {game.amount}</span>
-      </div>
-    </StyleProductCart>
+      <ul>
+        <S.GameTitle>
+          <Text tag="h4" size="size5">
+            {game.name}
+          </Text>
+        </S.GameTitle>
+        <S.GamePrice>
+          <Text tag="span" size="size5">
+            R$ {game.price}
+          </Text>
+          <Text tag="span" size="size5">
+            Qtd: {game.amount}
+          </Text>
+        </S.GamePrice>
+        <li>
+          <button>
+            <FaTrash />
+          </button>
+        </li>
+      </ul>
+    </S.StyleProductCart>
   );
 };
 
