@@ -36,6 +36,8 @@ export const CartTitle = styled(Text)`
 export const CartList = styled.ul`
   width: 300px;
   border-bottom: solid 1px ${({theme}) => theme.colors.grey.grey3};
+  height: 400px;
+  overflow-y: scroll;
 `;
 
 export const CartButton = styled.button`
