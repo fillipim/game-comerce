@@ -29,5 +29,9 @@ export const AddToCartButton = styled.button`
     background-color: ${({theme}) => theme.colors.grey.grey2};
     border-radius: 8px;
     margin-top: auto;
-    color: ${({theme}) => theme.colors.grey.grey0}
+    color: ${({theme}) => theme.colors.grey.grey0};
+    transition: all .3s;
+    &:hover{
+        background-color: ${({theme}) => theme.colors.brand.primary};
+    }
 `

@@ -4,6 +4,9 @@ import { Text } from "styles/typography";
 export const MainContainer = styled.main`
     width: 100%;
     padding: 0 10%;
+    h3{
+        margin: 1rem 0;
+    }
 `
 export const BackgroundImage = styled.img`
     position: absolute;
