@@ -22,6 +22,9 @@ export const Cart = styled.div`
       bottom: 0;
     }
   }
+  div {
+    width: 300px;
+  }
 `;
 
 export const CartTitle = styled(Text)`
@@ -53,12 +56,8 @@ export const OpenCartButton = styled.button`
   text-align: center;
 `;
 
-export const CartButton = styled.button`
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.grey.grey3};
-  color: ${({ theme }) => theme.colors.grey.grey0};
-  margin-top: 1rem;
+export const CloseCartButton = styled.button`
+  font-size: 20px;
+  margin: 1rem 0;
+  color: ${({ theme }) => theme.colors.brand.secondary};
 `;
