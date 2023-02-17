@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyleProductCart = styled.li`
     display: flex;
     margin-bottom: 1rem;
+    text-align: start;
     div{
         width: 70px;
         height: 70px;

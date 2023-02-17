@@ -2,8 +2,14 @@ import * as S from "./productCart.style";
 import { Text } from "styles/typography";
 import { IGameCart } from "interfaces";
 import { FaTrash } from "react-icons/fa";
+import { removeGameToCart } from "store/Cart/cart.slice";
+import { useDispatch } from "react-redux";
 
 const ProductCart = ({ game }: { game: IGameCart }) => {
+  const dispach = useDispatch()
+  
+  const handleCartProduct = () => dispach(removeGameToCart(game.id))
+
   return (
     <S.StyleProductCart>
       <div>
@@ -24,7 +30,7 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
           </Text>
         </S.GamePrice>
         <li>
-          <button>
+          <button onClick={handleCartProduct}>
             <FaTrash />
           </button>
         </li>
