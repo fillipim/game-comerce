@@ -3,6 +3,7 @@ import { IGame } from "interfaces";
 import { Text } from "styles/typography";
 import * as S from "./gameCard.style";
 import { addGameToCart } from "store/Cart/cart.slice";
+import { Button } from "components/Button/button.style";
 
 const GameCard = ({ game }: { game: IGame }) => {
   const dispach = useDispatch();
@@ -24,9 +25,9 @@ const GameCard = ({ game }: { game: IGame }) => {
         <S.GamePrice tag="span" size="size4" color="grey2" fontWeight={700}>
           R$ {`${game.price}`.replace(".", ",")}
         </S.GamePrice>
-        <S.AddToCartButton onClick={handleGame}>
+        <Button buttonType="primary" onClick={handleGame}>
           Adicionar ao carrinho
-        </S.AddToCartButton>
+        </Button>
       </div>
     </S.GameCard>
   );

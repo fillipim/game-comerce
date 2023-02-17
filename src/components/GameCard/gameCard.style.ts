@@ -1,3 +1,4 @@
+import { Button } from "components/Button/button.style";
 import styled from "styled-components";
 import { Text } from "styles/typography";
 
@@ -23,7 +24,7 @@ export const GamePrice = styled(Text)`
     display: block;
 `
 
-export const AddToCartButton = styled.button`
+export const AddToCartButton = styled(Button)`
     padding: 1rem;
     width: 100%;
     background-color: ${({theme}) => theme.colors.grey.grey2};

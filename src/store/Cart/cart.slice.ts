@@ -14,25 +14,39 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addGameToCart(state, payload: PayloadAction<IGameCart | IGame>) {
-      const game = state.cart.find(
-        (game: IGameCart) => game.id === payload.payload.id
+    addGameToCart(state, { payload }: PayloadAction<IGameCart | IGame>) {
+      const existingGameInCart = state.cart.find(
+        (game: IGameCart) => game.id === payload.id
       );
-      if (game) {
-        state.cart = state.cart.map((game: IGameCart) => {
-          if (game.id === payload.payload.id) {
-            game.amount = game.amount + 1;
-          }
-          return game;
-        });
-        return;
+
+      if (existingGameInCart) {
+        state.cart = state.cart.map((game: IGameCart) =>
+          game.id === payload.id ? { ...game, amount: game.amount + 1 } : game
+        );
+      } else {
+        state.cart = [...state.cart, { ...payload, amount: 1 }];
       }
-      state.cart = [...state.cart, { ...payload.payload, amount: 1 }];
+    },
+    removeGameToCart(state, { payload }: PayloadAction<number>) {
+      const gameIndex = state.cart.findIndex((game) => game.id === payload);
+      if (state.cart[gameIndex].amount === 1) {
+        state.cart = [
+          ...state.cart.slice(0, gameIndex),
+          ...state.cart.slice(gameIndex + 1),
+        ];
+      } else {
+        state.cart = state.cart.map((game) =>
+          game.id === payload ? { ...game, amount: game.amount - 1 } : game
+        );
+      }
+    },
+    clearCart(state) {
+      state.cart = [] as IGameCart[];
     },
   },
 });
 
-export const { addGameToCart } = cartSlice.actions;
+export const { addGameToCart, removeGameToCart, clearCart } = cartSlice.actions;
 
 export const selectCart = (state: RootState) => state.cart;
 
