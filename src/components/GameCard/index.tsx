@@ -17,14 +17,17 @@ const GameCard = ({ game }: { game: IGame }) => {
           src={require(`assets/${game.image}`)}
           title={game.name}
         />
-        <Text tag="h3" size="size3" color="grey4">
+        <Text tag="h4" size="size3" color="grey4">
           {game.name}
         </Text>
       </div>
       <div>
         <S.GamePrice tag="span" size="size4" color="grey2" fontWeight={700}>
-          R$ {`${game.price}`.replace(".", ",")}
+          R$ {`${game.price.toFixed(2)}`.replace(".", ",")}
         </S.GamePrice>
+        <Text tag="span" size="size4" color="grey3">
+          Score: {game.score}
+        </Text>
         <Button buttonType="primary" onClick={handleGame}>
           Adicionar ao carrinho
         </Button>

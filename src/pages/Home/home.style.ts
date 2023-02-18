@@ -5,7 +5,7 @@ export const MainContainer = styled.main`
   width: 100%;
   padding: 0 10%;
   h3 {
-    margin: 1rem 0;
+    margin: 2rem 0;
   }
 `;
 export const BackgroundImage = styled.img`
@@ -18,7 +18,7 @@ export const BackgroundImage = styled.img`
 export const BrandBox = styled.section`
   width: 100%;
   display: flex;
-  margin-top: 100px;
+  margin-top: 200px;
   h2 {
     color: ${({ theme }) => theme.colors.brand.primary};
     margin: 2rem 0;

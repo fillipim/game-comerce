@@ -10,7 +10,7 @@ export const colors = {
         grey3: "#212529",
         grey4: "#121214"
     },
-    feedeback: {
+    feedback: {
         error: "#E83F5B",
         sucess: "#3FE864"
     }

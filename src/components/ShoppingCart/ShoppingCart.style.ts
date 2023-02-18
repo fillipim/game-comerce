@@ -38,9 +38,17 @@ export const CartList = styled.ul`
   border-bottom: solid 1px ${({ theme }) => theme.colors.grey.grey3};
   height: 300px;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.brand.secondary};;
+    border-radius: 20px;
+    border: 3px solid ${({ theme }) => theme.colors.grey.grey0};
+  }
 `;
 
-export const OpenCartButton = styled.button`
+export const OpenCartButton = styled.button<{ total: number }>`
   position: fixed;
   width: 50px;
   height: 50px;
@@ -50,11 +58,17 @@ export const OpenCartButton = styled.button`
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.brand.secondary};
   font-size: 18px;
-  text-align: center;
 `;
 
 export const CloseCartButton = styled.button`
   font-size: 20px;
   margin: 1rem 0;
   color: ${({ theme }) => theme.colors.brand.secondary};
-`
+`;
+export const CartCheckout = styled.div`
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+`;

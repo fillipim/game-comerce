@@ -15,22 +15,20 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
     <S.StyleProductCart>
       <img src={require(`assets/${game.image}`)} alt="" />
       <ul>
-        <S.GameTitle>
-          <Text tag="h4" size="size5">
+        <li>
+          <S.GameTitle tag="h4" size="size5">
             {game.name}
-          </Text>
-        </S.GameTitle>
+          </S.GameTitle>
+        </li>
         <li>
           <S.GamePrice tag="span" size="size5" color="grey4">
             R$ {game.price}
           </S.GamePrice>
-        </li>
-        <li>
           <div>
             <button onClick={addCartProduct}>
               <FaPlus />
             </button>
-            <S.GameQtd tag="span" color="grey4">
+            <S.GameQtd tag="span" size="size3" color="grey4">
               {game.amount}
             </S.GameQtd>
             <button onClick={removeCartProduct}>
