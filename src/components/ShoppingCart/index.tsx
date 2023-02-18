@@ -2,7 +2,8 @@ import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCart, clearCart, togglecart } from "store/Cart/cart.slice";
 
-import { ImCart, ImArrowDown } from "react-icons/im";
+import { ImCart } from "react-icons/im";
+import { CgClose } from "react-icons/cg";
 import ProductCart from "components/ProductCart";
 import * as S from "./ShoppingCart.style";
 import { Text } from "styles/typography";
@@ -14,9 +15,11 @@ const ShoppingCart = () => {
 
   const handleClearCart = () => dispach(clearCart());
   const handleToggleCart = () => dispach(togglecart());
-  
+
   const { subtotal, total, score } = useMemo(() => {
-    const subtotal = cart.reduce((act, item) => act + item.price * item.amount, 0);
+    const subtotal = cart
+      .reduce((act, item) => act + item.price * item.amount, 0)
+      .toFixed(2);
     const total = cart.reduce((act, item) => act + item.amount, 0);
     const score = cart.reduce((act, item) => act + item.score, 0);
     return { subtotal, total, score };
@@ -72,7 +75,7 @@ const ShoppingCart = () => {
         </>
       )}
       <S.CloseCartButton onClick={handleToggleCart}>
-        <ImArrowDown />
+        <CgClose />
       </S.CloseCartButton>
     </S.Cart>
   ) : (

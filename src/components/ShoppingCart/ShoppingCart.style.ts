@@ -22,6 +22,12 @@ export const Cart = styled.div`
       bottom: 0;
     }
   }
+  @media (max-width: 520px) {
+    width: 80%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+  }
 `;
 
 export const CartTitle = styled(Text)`
@@ -35,16 +41,19 @@ export const CartTitle = styled(Text)`
 
 export const CartList = styled.ul`
   width: 300px;
+  max-height: 300px;
   border-bottom: solid 1px ${({ theme }) => theme.colors.grey.grey3};
-  height: 300px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 10px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.brand.secondary};;
+    background-color: ${({ theme }) => theme.colors.brand.secondary};
     border-radius: 20px;
     border: 3px solid ${({ theme }) => theme.colors.grey.grey0};
+  }
+  @media (max-width: 520px) {
+    max-height: 200px;
   }
 `;
 
