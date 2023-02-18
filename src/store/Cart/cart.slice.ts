@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from ".";
 import { IGame, IGameCart } from "interfaces";
+import { toast } from "react-toastify";
 
 export interface ICartState {
   cart: IGameCart[];
@@ -26,6 +27,8 @@ const cartSlice = createSlice({
       } else {
         state.cart = [...state.cart, { ...payload, amount: 1 }];
       }
+
+      toast.success("Item adicionado ao carrinho");
     },
     removeGameToCart(state, { payload }: PayloadAction<number>) {
       const gameIndex = state.cart.findIndex((game) => game.id === payload);
@@ -39,6 +42,7 @@ const cartSlice = createSlice({
           game.id === payload ? { ...game, amount: game.amount - 1 } : game
         );
       }
+      toast.success("Item removido do carrinho!")
     },
     clearCart(state) {
       state.cart = [] as IGameCart[];

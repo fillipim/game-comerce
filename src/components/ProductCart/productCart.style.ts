@@ -5,11 +5,6 @@ export const StyleProductCart = styled.li`
   display: flex;
   margin-bottom: 1rem;
   text-align: start;
-  div {
-    width: 70px;
-    height: 70px;
-    border-radius: 5px;
-  }
   ul {
     width: 60%;
     margin-left: 20px;
@@ -18,8 +13,10 @@ export const StyleProductCart = styled.li`
     margin-bottom: 5px;
   }
   img {
-    width: 100%;
     object-fit: contain;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
   }
 `;
 
