@@ -1,8 +1,8 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCart, clearCart, togglecart } from "store/Cart/cart.slice";
 import { CgClose } from "react-icons/cg";
 import { ImCart } from "react-icons/im";
-import { useMemo } from "react";
 
 import ProductCart from "components/ProductCart";
 import { Text } from "components/Text/Text.style";

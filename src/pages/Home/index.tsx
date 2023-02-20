@@ -7,7 +7,7 @@ import * as S from "pages/Home/home.style";
 const Home = () => (
   <S.MainContainer>
     <ShoppingCart />
-    <S.BackgroundImage alt="About" src={aboutImage} />
+    <S.BackgroundImage alt="About" src={aboutImage}/>
     <S.BrandBox>
       <S.SideLeft>
         <S.BrandTitle tag="h1" color="ligth" colorLevel="primary">

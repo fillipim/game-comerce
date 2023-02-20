@@ -3,7 +3,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "styles";
+import { GlobalStyles } from "styles/global.style";
 import theme from "styles/theme";
 import { store } from "./store/Cart";
 import { ToastContainer } from "react-toastify";

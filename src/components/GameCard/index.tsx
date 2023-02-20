@@ -34,7 +34,11 @@ const GameCard = ({ game }: { game: IGame }) => {
         <S.GameScore tag="span" size="sm" color="grey" colorLevel="secondary">
           Score: {game.score}
         </S.GameScore>
-        <Button buttonType="primary" onClick={handleGame}>
+        <Button
+          buttonType="primary"
+          onClick={handleGame}
+          title="Adicionar produto ao cariinho"
+        >
           Adicionar ao carrinho
         </Button>
       </div>
