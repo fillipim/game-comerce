@@ -1,14 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from ".";
 import { IGame, IGameCart } from "interfaces";
-import { toast } from "react-toastify";
+import { showToast } from "helpers";
 
 export interface ICartState {
   cart: IGameCart[];
+  CartIsOpen: boolean;
 }
 
 const initialState = {
   cart: [] as IGameCart[],
+  cartIsOpen: false,
 };
 
 const cartSlice = createSlice({
@@ -27,31 +29,32 @@ const cartSlice = createSlice({
       } else {
         state.cart = [...state.cart, { ...payload, amount: 1 }];
       }
-
-      toast.success("Item adicionado ao carrinho");
+      state.cartIsOpen = true;
+      showToast("success", "Item adicionado ao carrinho!");
     },
     removeGameToCart(state, { payload }: PayloadAction<number>) {
       const gameIndex = state.cart.findIndex((game) => game.id === payload);
       if (state.cart[gameIndex].amount === 1) {
-        state.cart = [
-          ...state.cart.slice(0, gameIndex),
-          ...state.cart.slice(gameIndex + 1),
-        ];
+        state.cart = state.cart.filter((game) => game.id !== payload);
       } else {
         state.cart = state.cart.map((game) =>
           game.id === payload ? { ...game, amount: game.amount - 1 } : game
         );
       }
-      toast.success("Item removido do carrinho!")
+      showToast("success", "Item adicionado ao carrinho!");
     },
     clearCart(state) {
       state.cart = [] as IGameCart[];
     },
+    togglecart(state) {
+      state.cartIsOpen = !state.cartIsOpen;
+    },
   },
 });
 
-export const { addGameToCart, removeGameToCart, clearCart } = cartSlice.actions;
+export const { addGameToCart, removeGameToCart, clearCart, togglecart } =
+  cartSlice.actions;
 
-export const selectCart = (state: RootState) => state.cart;
+export const selectCart = (state: RootState) => state;
 
 export default cartSlice.reducer;
