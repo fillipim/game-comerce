@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCart, clearCart } from "store/Cart/cart.slice";
+import { selectCart, clearCart, togglecart } from "store/Cart/cart.slice";
 
 import { ImCart, ImArrowDown } from "react-icons/im";
 import ProductCart from "components/ProductCart";
@@ -9,15 +8,14 @@ import { Text } from "styles/typography";
 import { Button } from "components/Button/button.style";
 
 const ShoppingCart = () => {
-  const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
-  const cartState = useSelector(selectCart);
+  const {cart, cartIsOpen} = useSelector(selectCart);
   const dispach = useDispatch();
 
-  const handleCart = () => setCartIsOpen(!cartIsOpen);
+  const handleCart = () => dispach(togglecart());
 
   const handleClearCart = () => {
     dispach(clearCart());
-    setCartIsOpen(false);
+    dispach(togglecart());
   };
 
   return cartIsOpen ? (
@@ -25,7 +23,7 @@ const ShoppingCart = () => {
       <S.CartTitle tag="h3" size="size5">
         Carrinho de compras
       </S.CartTitle>
-      {!cartState.length ? (
+      {!cart.length ? (
         <div>
           <Text tag="span" size="size3" color="grey3">
             Seu carrinho esta vazio!
@@ -34,7 +32,7 @@ const ShoppingCart = () => {
       ) : (
         <>
           <S.CartList>
-            {cartState.map((game) => (
+            {cart.map((game) => (
               <ProductCart key={game.id} game={game} />
             ))}
           </S.CartList>
