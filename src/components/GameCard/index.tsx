@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import { IGame } from "interfaces";
-import { Text } from "styles/typography";
-import * as S from "./gameCard.style";
+import { IGame } from "types/interfaces";
 import { addGameToCart } from "store/Cart/cart.slice";
+import { Text } from "components/Text/Text.style";
 import { Button } from "components/Button/button.style";
+import * as S from "./gameCard.style";
 
 const GameCard = ({ game }: { game: IGame }) => {
   const dispach = useDispatch();
@@ -17,14 +17,23 @@ const GameCard = ({ game }: { game: IGame }) => {
           src={require(`assets/${game.image}`)}
           title={game.name}
         />
-        <Text tag="h3" size="size3" color="grey4">
+        <Text tag="h4" size="lg" color="dark">
           {game.name}
         </Text>
       </div>
       <div>
-        <S.GamePrice tag="span" size="size4" color="grey2" fontWeight={700}>
+        <S.GamePrice
+          tag="span"
+          size="sm"
+          color="grey"
+          colorLevel="secondary"
+          fontWeight={700}
+        >
           R$ {`${game.price}`.replace(".", ",")}
         </S.GamePrice>
+        <S.GameScore tag="span" size="sm" color="grey" colorLevel="secondary">
+          Score: {game.score}
+        </S.GameScore>
         <Button buttonType="primary" onClick={handleGame}>
           Adicionar ao carrinho
         </Button>

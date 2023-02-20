@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "styles/typography";
+import { Text } from "components/Text/Text.style";
 
 export const StyleProductCart = styled.li`
   display: flex;
@@ -24,14 +24,14 @@ export const GameTitle = styled.li`
   display: flex;
   h4 {
     padding-top: 5px;
-    color: ${({ theme }) => theme.colors.grey.grey3};
+    color: ${({ theme }) => theme.colors.grey.secondary};
   }
 `;
 
 export const GamePrice = styled(Text)`
   padding-right: 1rem;
 `;
-export const GameQtd = styled(Text)`
+export const GameAmount = styled(Text)`
   padding: 1rem;
   font-size: 18px;
 `;

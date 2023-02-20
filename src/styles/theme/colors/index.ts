@@ -1,17 +1,26 @@
 export const colors = {
-    brand: {
-        primary: "#00A1FC",
-        secondary: "#0153B5"
-    },
-    grey: {
-        grey0: "#F8F9FA",
-        grey1: "#dedede",
-        grey2: "#343B41",
-        grey3: "#212529",
-        grey4: "#121214"
-    },
-    feedeback: {
-        error: "#E83F5B",
-        sucess: "#3FE864"
-    }
+  blue: {
+    primary: "#00A1FC",
+    secondary: "#0153B5",
+  },
+  ligth: {
+    primary: "#F8F9FA",
+    secondary: "#dfdfdf"
+  },
+  dark: {
+    primary: "#212529",
+    secondary: "#121214",
+  },
+  grey: {
+    primary: "#dedede",
+    secondary: "#343B41",
+  },
+  danger: {
+    primary: "#E83F5B",
+    secondary: "#87000a"
+  },
+  success: {
+    primary: "#3FE864",
+    secondary: "#00870d"
+  },
 };

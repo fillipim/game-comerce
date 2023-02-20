@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from ".";
-import { IGame, IGameCart } from "interfaces";
-import { showToast } from "helpers";
+import { IGame, IGameCart } from "types/interfaces";
+import { showToast } from "utils/showToast";
 
 export interface ICartState {
   cart: IGameCart[];

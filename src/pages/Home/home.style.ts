@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Text } from "styles/typography";
+import { Text } from "components/Text/Text.style";
 
 export const MainContainer = styled.main`
   width: 100%;
-  padding: 0 10%;
+  padding: 0 5%;
   h3 {
     margin: 1rem 0;
   }
@@ -18,19 +18,20 @@ export const BackgroundImage = styled.img`
 export const BrandBox = styled.section`
   width: 100%;
   display: flex;
-  margin-top: 100px;
+  margin-top: 200px;
   h2 {
-    color: ${({ theme }) => theme.colors.brand.primary};
+    color: ${({ theme }) => theme.colors.blue.primary};
     margin: 2rem 0;
   }
   height: 100vh;
 `;
 
 export const ListProductsButton = styled.a`
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 20px;
-  background-color: ${({ theme }) => theme.colors.brand.secondary};
-  color: ${({ theme }) => theme.colors.grey.grey0};
+  background-color: ${({ theme }) => theme.colors.blue.secondary};
+  color: ${({ theme }) => theme.colors.ligth.primary};
+  margin-top: 0.75rem;
 `;
 
 export const BrandTitle = styled(Text)`

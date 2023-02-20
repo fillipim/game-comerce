@@ -1,9 +1,9 @@
 export const typography = {
     sizes: {
-        size1: "28px",
-        size2: "18px",
-        size3: "16px",
-        size4: "14px",
-        size5: "12px"
+        xl: "28px",
+        lg: "18px",
+        md: "16px",
+        sm: "14px",
+        xs: "12px"
     }
 };
