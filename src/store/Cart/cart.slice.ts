@@ -41,7 +41,7 @@ const cartSlice = createSlice({
           game.id === payload ? { ...game, amount: game.amount - 1 } : game
         );
       }
-      showToast("success", "Item adicionado ao carrinho!");
+      showToast("success", "Item adicionado ao carrinho!!");
     },
     clearCart(state) {
       state.cart = [] as IGameCart[];
