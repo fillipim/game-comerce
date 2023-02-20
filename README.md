@@ -14,7 +14,7 @@ The website is easy to use and navigate. . Once they've found a game they want t
 
 - Shopping Cart System: Users can add games to cart and then checkout all items at once
 
-![Game Cart](blob:https://imgur.com/6594eb0c-3c32-46cf-b93d-2e654840f63b)
+![Game Cart](https://i.imgur.com/8IOFxhj.png)
 
 ## Technologies used
 
