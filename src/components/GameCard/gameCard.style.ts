@@ -11,7 +11,7 @@ export const GameCard = styled.li`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    h4{
+    h3{
         padding: 1rem 0;
     }
 `

@@ -1,4 +1,4 @@
-import products from "database/products.json";
+import products from "products.json";
 import * as S from "components/GameList/GameList.style";
 import GameCard from "components/GameCard";
 
