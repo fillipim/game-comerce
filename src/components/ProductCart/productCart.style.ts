@@ -11,8 +11,6 @@ export const StyleProductCart = styled.li`
   }
   li {
     margin-bottom: 5px;
-    display: flex;
-    align-items: center;
   }
   img {
     object-fit: contain;
@@ -22,14 +20,18 @@ export const StyleProductCart = styled.li`
   }
 `;
 
-export const GameTitle = styled(Text)`
-  padding-top: 5px;
-  color: ${({ theme }) => theme.colors.grey.grey3};
+export const GameTitle = styled.li`
+  display: flex;
+  h4 {
+    padding-top: 5px;
+    color: ${({ theme }) => theme.colors.grey.grey3};
+  }
 `;
 
 export const GamePrice = styled(Text)`
   padding-right: 1rem;
 `;
 export const GameQtd = styled(Text)`
-  padding: 0 .75rem;
+  padding: 1rem;
+  font-size: 18px;
 `;

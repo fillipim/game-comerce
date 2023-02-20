@@ -6,8 +6,6 @@ export const Button = styled.button<{ buttonType: string }>`
   text-align: center;
   border-radius: 8px;
   transition: all 0.3s;
-  color: ${({ theme }) => theme.colors.grey.grey0};
-  margin-top: 1rem;
   ${({ theme, buttonType }) => {
     switch (buttonType) {
       case "primary":
@@ -23,7 +21,6 @@ export const Button = styled.button<{ buttonType: string }>`
         `;
     }
   }};
-  @media (min-width: 1040px) {
-    font-size: 18px
-  }
+  color: ${({ theme }) => theme.colors.grey.grey0};
+  margin-top: 1rem;
 `;
