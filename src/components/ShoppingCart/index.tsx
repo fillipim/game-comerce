@@ -1,14 +1,16 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCart, clearCart, togglecart } from "store/Cart/cart.slice";
+import { CgClose } from "react-icons/cg";
+import { ImCart } from "react-icons/im";
 
-import { ImCart, ImArrowDown } from "react-icons/im";
 import ProductCart from "components/ProductCart";
+import { Text } from "components/Text/Text.style";
 import * as S from "./ShoppingCart.style";
-import { Text } from "styles/typography";
 import { Button } from "components/Button/button.style";
 
 const ShoppingCart = () => {
-  const {cart, cartIsOpen} = useSelector(selectCart);
+  const { cart, cartIsOpen } = useSelector(selectCart);
   const dispach = useDispatch();
 
   const handleCart = () => dispach(togglecart());
@@ -18,14 +20,23 @@ const ShoppingCart = () => {
     dispach(togglecart());
   };
 
+  const { subtotal, total, score } = useMemo(() => {
+    const subtotal = cart
+      .reduce((act, item) => act + item.price * item.amount, 0)
+      .toFixed(2);
+    const total = cart.reduce((act, item) => act + item.amount, 0);
+    const score = cart.reduce((act, item) => act + item.score, 0);
+    return { subtotal, total, score };
+  }, [cart]);
+
   return cartIsOpen ? (
     <S.Cart>
-      <S.CartTitle tag="h3" size="size5">
+      <S.CartTitle tag="h3" size="sm">
         Carrinho de compras
       </S.CartTitle>
       {!cart.length ? (
         <div>
-          <Text tag="span" size="size3" color="grey3">
+          <Text tag="span" size="md" color="grey" colorLevel="secondary">
             Seu carrinho esta vazio!
           </Text>
         </div>
@@ -36,13 +47,39 @@ const ShoppingCart = () => {
               <ProductCart key={game.id} game={game} />
             ))}
           </S.CartList>
+          <S.CartCheckout>
+            <div>
+              <Text tag="span" color="grey" size="sm" colorLevel="secondary">
+                Total:
+              </Text>
+              <Text tag="span" color="grey" size="sm" colorLevel="secondary">
+                {total}
+              </Text>
+            </div>
+            <div>
+              <Text tag="span" color="grey" size="sm" colorLevel="secondary">
+                Subtotal:
+              </Text>
+              <Text tag="span" color="grey" size="sm" colorLevel="secondary">
+                R$ {`${subtotal}`.replace(".", ",")}
+              </Text>
+            </div>
+            <div>
+              <Text tag="span" color="grey" size="sm" colorLevel="secondary">
+                Score:
+              </Text>
+              <Text tag="span" color="grey" size="sm" colorLevel="secondary">
+                {score}
+              </Text>
+            </div>
+          </S.CartCheckout>
           <Button buttonType="secondary" onClick={handleClearCart}>
             Limpar Carrinho
           </Button>
         </>
       )}
       <S.CloseCartButton onClick={handleCart}>
-        <ImArrowDown />
+        <CgClose />
       </S.CloseCartButton>
     </S.Cart>
   ) : (

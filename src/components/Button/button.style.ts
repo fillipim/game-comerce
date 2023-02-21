@@ -6,21 +6,21 @@ export const Button = styled.button<{ buttonType: string }>`
   text-align: center;
   border-radius: 8px;
   transition: all 0.3s;
-  ${({ theme, buttonType }) => {
+  font-size: 16px;
+  ${({ buttonType }) => {
     switch (buttonType) {
       case "primary":
         return css`
-          background-color: ${({ theme }) => theme.colors.grey.grey3};
+          background-color: ${({ theme }) => theme.colors.dark.primary};
           &:hover {
-            background-color: ${({ theme }) => theme.colors.brand.secondary};
+            background-color: ${({ theme }) => theme.colors.blue.secondary};
           }
         `;
       case "secondary":
         return css`
-          background-color: ${({ theme }) => theme.colors.grey.grey2};
+          background-color: ${({ theme }) => theme.colors.grey.secondary};
         `;
     }
   }};
-  color: ${({ theme }) => theme.colors.grey.grey0};
-  margin-top: 1rem;
+  color: ${({ theme }) => theme.colors.ligth.primary};
 `;

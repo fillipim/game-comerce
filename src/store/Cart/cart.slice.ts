@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from ".";
-import { IGame, IGameCart } from "interfaces";
-import { showToast } from "helpers";
+import { IGame, IGameCart } from "types/interfaces";
+import { showToast } from "utils/showToast";
 
 export interface ICartState {
   cart: IGameCart[];
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
           game.id === payload ? { ...game, amount: game.amount - 1 } : game
         );
       }
-      showToast("success", "Item adicionado ao carrinho!!");
+      showToast("success", "Item removido do carrinho!!");
     },
     clearCart(state) {
       state.cart = [] as IGameCart[];

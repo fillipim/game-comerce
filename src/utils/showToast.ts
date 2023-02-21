@@ -1,4 +1,4 @@
-import {toast, ToastContent} from "react-toastify";
+import { toast, ToastContent } from "react-toastify";
 
 export const showToast = (type: "success" | "error", message: ToastContent) => {
   toast.dismiss()

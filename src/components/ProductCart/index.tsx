@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { removeGameToCart, addGameToCart } from "store/Cart/cart.slice";
-import { Text } from "styles/typography";
-import { IGameCart } from "interfaces";
+import { Text } from "components/Text/Text.style";
+import { IGameCart } from "types/interfaces";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import * as S from "./productCart.style";
 
@@ -13,27 +13,27 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
 
   return (
     <S.StyleProductCart>
-      <img src={require(`assets/${game.image}`)} alt="" />
+      <img src={require(`assets/${game.image}`)} alt={`${game.image}`} title={game.image}/>
       <ul>
         <S.GameTitle>
-          <Text tag="h4" size="size5">
+          <Text tag="h4" size="sm">
             {game.name}
           </Text>
         </S.GameTitle>
         <li>
-          <S.GamePrice tag="span" size="size5" color="grey4">
-            R$ {game.price}
+          <S.GamePrice tag="span" size="sm" color="grey" colorLevel="secondary">
+            R$ {`${game.price.toFixed(2)}`.replace(".", ",")}
           </S.GamePrice>
         </li>
         <li>
           <div>
-            <button onClick={addCartProduct}>
+            <button onClick={addCartProduct} title="Adicionar um produto">
               <FaPlus />
             </button>
-            <S.GameQtd tag="span" color="grey4">
+            <S.GameAmount tag="span" color="grey" colorLevel="secondary" title="Quantidade">
               {game.amount}
-            </S.GameQtd>
-            <button onClick={removeCartProduct}>
+            </S.GameAmount>
+            <button onClick={removeCartProduct} title="Remover um produto">
               <FaMinus />
             </button>
           </div>
