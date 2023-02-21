@@ -11,6 +11,8 @@ export const StyleProductCart = styled.li`
   }
   li {
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
   }
   img {
     object-fit: contain;
@@ -32,6 +34,6 @@ export const GamePrice = styled(Text)`
   padding-right: 1rem;
 `;
 export const GameAmount = styled(Text)`
-  padding: 1rem;
+  padding: 0 1rem;
   font-size: 18px;
 `;
