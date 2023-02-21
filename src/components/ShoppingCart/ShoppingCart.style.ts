@@ -25,7 +25,7 @@ export const Cart = styled.div`
     }
   }
   @media (max-width: 520px) {
-    width: 80%;
+    width: 90%;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 0);
