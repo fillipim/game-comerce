@@ -1,8 +1,8 @@
-import aboutImage from "assets/img-background.svg";
 import { Text } from "components/Text/Text.style";
 import GamesList from "components/GameList";
 import ShoppingCart from "components/ShoppingCart";
 import * as S from "pages/Home/home.style";
+import aboutImage from "assets/img/img-background.svg";
 
 const Home = () => (
   <S.MainContainer>
@@ -14,7 +14,7 @@ const Home = () => (
           Game Commerce
         </S.BrandTitle>
         <Text tag="h2" size="lg">
-          A melhor Loja de games para você
+          A melhor loja de games para você
         </Text>
         <S.ListProductsButton href="#products-list">
           Ver Produtos
