@@ -42,5 +42,5 @@ The website was developed using the following technologies:
 
 ## Production
 
-[Link to test](https://game-comerce.vercel.app/)
+[Link to test](https://game-e-commerce.vercel.app/)
 
