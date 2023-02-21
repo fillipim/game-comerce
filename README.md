@@ -6,6 +6,20 @@ This is an online gaming e-commerce where users can purchase games, DLCs and add
 
 The website is easy to use and navigate. . Once they've found a game they want to buy, they can add it to their cart.
 
+In the project directory, you can run:
+
+### `yarn`
+
+To install all project dependencies
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 ## Website features
 
 - Complete game catalog: The site has a complete catalog of games from different genres and platforms. 
@@ -26,21 +40,7 @@ The website was developed using the following technologies:
 - react-toastify
 - Redux-toolkit
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn`
-
-To install all project dependencies
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
 ## Production
+
+[Link to test](https://game-comerce.vercel.app/)
 
