@@ -73,8 +73,11 @@ const ShoppingCart = () => {
               </Text>
             </div>
           </S.CartCheckout>
+          <S.CheckoutButton to="/checkout">
+            Finalizar compra
+          </S.CheckoutButton>
           <Button buttonType="secondary" onClick={handleClearCart}>
-            Limpar Carrinho
+            Limpar carrinho
           </Button>
         </>
       )}

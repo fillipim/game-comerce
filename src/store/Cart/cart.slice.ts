@@ -6,11 +6,13 @@ import { showToast } from "utils/showToast";
 export interface ICartState {
   cart: IGameCart[];
   CartIsOpen: boolean;
+  purchaseIsFinish: boolean
 }
 
 const initialState = {
   cart: [] as IGameCart[],
   cartIsOpen: false,
+  purchaseIsFinish: false
 };
 
 const cartSlice = createSlice({
@@ -49,6 +51,9 @@ const cartSlice = createSlice({
     togglecart(state) {
       state.cartIsOpen = !state.cartIsOpen;
     },
+    purchase(state){
+      state.purchaseIsFinish = !state.purchaseIsFinish
+    }
   },
 });
 

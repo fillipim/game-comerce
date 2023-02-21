@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Text } from "components/Text/Text.style";
+import { Link } from "react-router-dom";
 
 export const Cart = styled.div`
   position: fixed;
@@ -77,4 +78,14 @@ export const CartCheckout = styled.div`
     justify-content: space-between;
     margin: 1rem 0;
   }
+`;
+
+export const CheckoutButton = styled(Link)`
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s;
+  font-size: 16px;
+  background-color: ${({theme}) => theme.colors.grey.secondary};
 `;
