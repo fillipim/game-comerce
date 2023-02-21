@@ -1,23 +1,31 @@
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCart, clearCart, togglecart } from "store/Cart/cart.slice";
 import { CgClose } from "react-icons/cg";
 import { ImCart } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 
+import { selectCart, clearCart, togglecart } from "store/Cart/cart.slice";
 import ProductCart from "components/ProductCart";
 import { Text } from "components/Text/Text.style";
 import * as S from "./ShoppingCart.style";
 import { Button } from "components/Button/button.style";
+import { showToast } from "utils/showToast";
 
 const ShoppingCart = () => {
   const { cart, cartIsOpen } = useSelector(selectCart);
   const dispach = useDispatch();
-
+  const navigate = useNavigate();
   const handleCart = () => dispach(togglecart());
 
   const handleClearCart = () => {
     dispach(clearCart());
     dispach(togglecart());
+  };
+
+  const handleCheckout = () => {
+    dispach(clearCart());
+    navigate("/checkout")
+    showToast("success", "Compra finalizada!")
   };
 
   const { subtotal, total, score } = useMemo(() => {
@@ -73,9 +81,7 @@ const ShoppingCart = () => {
               </Text>
             </div>
           </S.CartCheckout>
-          <S.CheckoutButton to="/checkout">
-            Finalizar compra
-          </S.CheckoutButton>
+          <S.CheckoutButton buttonType="secondary" onClick={handleCheckout}>Finalizar compra</S.CheckoutButton>
           <Button buttonType="secondary" onClick={handleClearCart}>
             Limpar carrinho
           </Button>
