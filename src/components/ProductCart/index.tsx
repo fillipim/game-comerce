@@ -13,7 +13,7 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
 
   return (
     <S.StyleProductCart>
-      <img src={require(`assets/${game.image}`)} alt={`${game.image}`} title={game.image}/>
+      <img src={require(`assets/img/${game.image}`)} alt={`${game.image}`} title={game.image}/>
       <ul>
         <S.GameTitle>
           <Text tag="h4" size="sm">

@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { Text } from "components/Text/Text.style";
+import { Button } from "components/Button/button.style";
 
 export const Cart = styled.div`
   position: fixed;
   right: 49px;
+  width: 300px;
   bottom: -58%;
   animation: 0.5s cart-animation ease-in-out;
   animation-fill-mode: forwards;
@@ -40,12 +42,25 @@ export const CartTitle = styled(Text)`
 `;
 
 export const CartList = styled.ul`
-  width: 300px;
+  width: 100%;
   border-bottom: solid 1px ${({ theme }) => theme.colors.grey.secondary};
   height: 200px;
   overflow-y: scroll;
   @media (max-width: 520px) {
     max-height: 200px;
+  }
+  &::-webkit-scrollbar {
+    width: 8px; 
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.ligth.secondary}; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.blue.secondary}; /* color of the scroll thumb */
+    border-radius: 20px; 
+    border: 1px solid ${({ theme }) => theme.colors.ligth.secondary}; /* creates padding around scroll thumb */
   }
 `;
 
@@ -77,4 +92,9 @@ export const CartCheckout = styled.div`
     justify-content: space-between;
     margin: 1rem 0;
   }
+`;
+
+export const CheckoutButton = styled(Button)`
+  margin-bottom: 0.75rem;
+  background-color: ${({ theme }) => theme.colors.success.secondary};
 `;

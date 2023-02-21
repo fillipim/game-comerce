@@ -14,7 +14,7 @@ const GameCard = ({ game }: { game: IGame }) => {
       <div>
         <S.GameImage
           alt={game.name}
-          src={require(`assets/${game.image}`)}
+          src={require(`assets/img/${game.image}`)}
           title={game.name}
         />
         <Text tag="h4" size="lg" color="dark">
