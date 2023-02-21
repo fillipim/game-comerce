@@ -16,7 +16,7 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
       <img src={require(`assets/img/${game.image}`)} alt={`${game.image}`} title={game.image}/>
       <ul>
         <S.GameTitle>
-          <Text tag="h4" size="sm">
+          <Text tag="h4" size="xs">
             {game.name}
           </Text>
         </S.GameTitle>
@@ -24,8 +24,6 @@ const ProductCart = ({ game }: { game: IGameCart }) => {
           <S.GamePrice tag="span" size="sm" color="grey" colorLevel="secondary">
             R$ {`${game.price.toFixed(2)}`.replace(".", ",")}
           </S.GamePrice>
-        </li>
-        <li>
           <div>
             <button onClick={addCartProduct} title="Adicionar um produto">
               <FaPlus />
